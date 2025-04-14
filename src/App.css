@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.clear {
+	clear: both;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+html{
+  font-size: 62.5%;
+}
+
+/* navigation */
+
+.navbar {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  background-color: #B8CFE5;
+  padding: 0.8rem 2rem;
+}
+.navbar-logo img {
+  height: 50px;
+}
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.navbar-links a {
+  color: #2E2F53;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding: 1.3em;
+}
+.menu-icon {
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+  .navbar-links {
+    color: #2E2F53;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 1em 2em;
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #B8CFE5;
+      position: absolute;
+      top: 58px;
+      left: 0;
+  }
+  .navbar-links.show {
+      display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+
+.main-img{
+  width: 100%;
+}
+
+
+
+/* manga shop/store section */
+
+/* manga store section */
+.manga-cover{
+  width: 100%;
 }
