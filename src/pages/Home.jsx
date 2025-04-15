@@ -1,8 +1,11 @@
 import React from 'react'
+import HeroImage from '../assets/img/hero-img.svg'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <img src={HeroImage} alt="" className='manga-cover'/>
+    </div>
   )
 }
 

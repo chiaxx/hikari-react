@@ -1,0 +1,21 @@
+/* manga store section */
+.manga-cover{
+    width: 100%;
+  }
+  .manga-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    grid-gap: 2em; 
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    grid-row-gap: 5em;
+  }
+  .manga-img{
+    width: 85%; 
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+  }

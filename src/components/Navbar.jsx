@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import logo from "../assets/img/logo.png"
+import CartIcon from '../assets/icons/cart-shopping-solid.svg'
 import { ReactComponent as Hamburger } from '../assets/icons/hamburger.svg'
 
 const Navbar = () => {
@@ -24,7 +25,14 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/manga">Manga</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
+        <li><NavLink to ="/cart">Cart (<span>0</span>)</NavLink></li>
       </ul>
+      <div className='nav-cart'>
+        <span>0</span>
+        <Link to="/cart">
+          <img src={CartIcon} alt=""  width='20'/>
+        </Link>
+      </div>
     </nav>
   )
 }

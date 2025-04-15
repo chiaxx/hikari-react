@@ -49,9 +49,22 @@ html{
 .menu-icon {
   display: none;
 }
+.nav-cart{
+  cursor: pointer;
+  position: relative;
+}
+.nav-cart span{
+  position: absolute;
+  top: -12px;
+  right: -7px;
+  background: crimson;
+  font-size: 10px;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 50%;
+  z-index: -2px;
 
-
-
+}
 
 @media (max-width: 768px) {
   .menu-icon {
@@ -89,4 +102,51 @@ html{
 /* manga store section */
 .manga-cover{
   width: 100%;
+}
+.manga-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  grid-gap: 2em; 
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  grid-row-gap: 5em;
+}
+.manga-img{
+  width: 85%; 
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.manga-title {
+  font-size: 2rem;
+}
+
+.author-name {
+  font-size: 1.3rem;
+  margin: -1em 0;
+}
+
+.manga-price {
+  font-size: 1.55rem;
+  font-weight: bold;
+  padding-top: 1em;
+  margin-bottom: 2em;
+}
+
+.manga-btn {
+  color: white;
+  background: rgb(145, 116, 239);
+  padding: 1.56em 3.92em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2em;
+}
+
+/* Adds space between the icon and the text */
+.manga-btn i {
+  margin-right: 8px;
 }
