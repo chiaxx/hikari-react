@@ -27,12 +27,12 @@ const Navbar = () => {
         <li><NavLink to="/contact">Contact</NavLink></li>
         <li><NavLink to ="/cart">Cart (<span>0</span>)</NavLink></li>
       </ul>
-      <div className='nav-cart'>
+      {/* <div className='nav-cart'>
         <span>0</span>
         <Link to="/cart">
           <img src={CartIcon} alt=""  width='20'/>
         </Link>
-      </div>
+      </div> */}
     </nav>
   )
 }
