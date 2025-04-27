@@ -15,22 +15,22 @@ const ProductCart = (props) => {
         }));
     }
   return (
-    <div className='manga-container'>
+    <div className='manga-item'>
         <Link to={slug}>
              <img src={image} alt="" className='manga-img'/>
         </Link>
+
+
         <p className='manga-title'>{name}</p>
         <p className='author-name'>{author}</p>
         <span className='manga-price'>${price}</span>
-        <button className='manga-btn' >
+        <button className='manga-btn'onClick={handleAddToCart} >
         <ShoppingBagIcon className='w-5'/> Add to Cart</button>
 
-    </div>
-    
-
-
+        </div>      
 
   )
+  
 }
 
 export default ProductCart

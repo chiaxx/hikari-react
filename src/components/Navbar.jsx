@@ -1,10 +1,24 @@
-import { useState } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import React, { useState, useEffect} from 'react' 
+import { useSelector, useDispatch } from 'react-redux' 
+import { NavLink, Link} from 'react-router-dom'
+import { toggleStatusTab } from '../stores/cart'
 import logo from "../assets/img/logo.png"
-import CartIcon from '../assets/icons/cart-shopping-solid.svg'
 import { ReactComponent as Hamburger } from '../assets/icons/hamburger.svg'
 
+
 const Navbar = () => {
+  const [totalQuantity, setTotalQuantity] = useState(0);
+  const carts = useSelector(store => store.cart.items);
+  const dispatch = useDispatch();
+  useEffect(() => {
+      let total = 0;
+      carts.forEach(item => total += item.quantity);
+      setTotalQuantity(total);
+  }, [carts])
+  const handleOpenTabCart = () => {
+      dispatch(toggleStatusTab());
+  }
+
   const [showNavbar, setShowNavbar] = useState(false)
 
   const handleShowNavbar = () => {
@@ -25,17 +39,14 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/manga">Manga</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
-        <li><NavLink to ="/cart">Cart (<span>0</span>)</NavLink></li>
-      </ul>
-      {/* <div className='nav-cart'>
-        <span>0</span>
-        <Link to="/cart">
-          <img src={CartIcon} alt=""  width='20'/>
-        </Link>
-      </div> */}
+        <li><NavLink onClick={handleOpenTabCart}>Cart (<span>{totalQuantity}</span>)</NavLink></li>
+       </ul>
     </nav>
+
   )
+
 }
+
 
 export default Navbar
 

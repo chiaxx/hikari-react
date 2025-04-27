@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Manga from './pages/Manga';
 import Detail from './pages/Details';
 import Contact from './pages/Contact';
-import Home from './pages/Home'; // Add this import
+import Home from './pages/Home'; 
 
 const App = () => {
   return (
